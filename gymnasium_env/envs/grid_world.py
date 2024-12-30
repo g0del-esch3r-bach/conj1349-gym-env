@@ -5,6 +5,8 @@ import pygame # type: ignore
 import math
 import networkx as nx # type: ignore
 import numpy as np # type: ignore
+import matplotlib.pyplot as plt #type: ignore
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg #type: ignore
 
 N = 5
 
@@ -167,10 +169,26 @@ class GridWorldEnv(gym.Env):
 
         canvas = pygame.Surface((self.window_size, self.window_size))
         canvas.fill((255, 255, 255))
-        pix_square_size = (
-            self.window_size / self.size
-        )  # The size of a single grid square in pixels
+        #pix_square_size = (
+        #    self.window_size / self.size
+        #)  # The size of a single grid square in pixels
 
+        graph = nx.from_numpy_matrix(self._matrix_location)
+
+        plt.clf()
+        pos = nx.circular_layout(graph)
+        edge_colors = ['gray']
+        nx.draw(graph, pos, with_labels=True, node_color='lightblue', edge_color=edge_colors, node_size=500, font_size=10)
+        #u, v = current
+        #if graph.has_edge(u, v):
+        #    nx.draw_networkx_edges(graph, pos, edgelist=[(u, v)], edge_color='red', width=2.0)
+        #else:
+        #    nx.draw_networkx_edges(graph, pos, edgelist=[(u, v)], edge_color='red', style='dashed', width=2.0)
+        plt.title("State of the Graph")
+        canvas.draw()
+
+
+        """
         # First we draw the target
         pygame.draw.rect(
             canvas,
@@ -203,7 +221,7 @@ class GridWorldEnv(gym.Env):
                 (pix_square_size * x, 0),
                 (pix_square_size * x, self.window_size),
                 width=3,
-            )
+            )"""
 
         if self.render_mode == "human":
             # The following line copies our drawings from `canvas` to the visible window
