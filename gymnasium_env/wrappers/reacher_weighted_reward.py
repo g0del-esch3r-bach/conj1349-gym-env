@@ -1,4 +1,4 @@
-import gymnasium as gym
+import gymnasium as gym # type: ignore
 
 
 class ReacherRewardWrapper(gym.Wrapper):

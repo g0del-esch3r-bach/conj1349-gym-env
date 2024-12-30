@@ -1,6 +1,6 @@
-import gymnasium as gym
-from gymnasium.spaces import Box
-import numpy as np
+import gymnasium as gym # type: ignore
+from gymnasium.spaces import Box # type: ignore
+import numpy as np # type: ignore
 
 
 class RelativePosition(gym.ObservationWrapper):

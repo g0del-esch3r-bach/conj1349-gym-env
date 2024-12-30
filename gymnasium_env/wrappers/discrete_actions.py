@@ -1,5 +1,5 @@
-import gymnasium as gym
-from gymnasium.spaces import Discrete
+import gymnasium as gym # type: ignore
+from gymnasium.spaces import Discrete # type: ignore
 
 
 class DiscreteActions(gym.ActionWrapper):

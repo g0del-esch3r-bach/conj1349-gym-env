@@ -1,5 +1,5 @@
-import gymnasium as gym
-import numpy as np
+import gymnasium as gym # type: ignore
+import numpy as np # type: ignore
 
 
 class ClipReward(gym.RewardWrapper):
