@@ -1,10 +1,10 @@
 from enum import Enum
-import gymnasium as gym
-from gymnasium import spaces
-import pygame
+import gymnasium as gym # type: ignore
+from gymnasium import spaces # type: ignore
+import pygame # type: ignore
 import math
-import networkx as nx
-import numpy as np
+import networkx as nx # type: ignore
+import numpy as np # type: ignore
 
 N = 5
 
@@ -219,8 +219,9 @@ class GridWorldEnv(gym.Env):
             return np.transpose(
                 np.array(pygame.surfarray.pixels3d(canvas)), axes=(1, 0, 2)
             )
-
+"""
     def close(self):
         if self.window is not None:
             pygame.display.quit()
             pygame.quit()
+"""
