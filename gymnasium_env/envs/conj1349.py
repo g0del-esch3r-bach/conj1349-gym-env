@@ -24,7 +24,7 @@ class GridWorldEnv(gym.Env):
 
         # Observations are dictionaries with the agent's and the target's location.
         # Each location is encoded as an element of {0, ..., `size`}^2,
-        # i.e. MultiDiscrete([size, size]).
+        # MultiDiscrete([size, size]).
         self.observation_space = spaces.Dict(
             {
                 "agent": spaces.Discrete(math.floor(0.5 * nodes * (nodes - 1))), # which EDGE the agent is at (this is linear game mode)
