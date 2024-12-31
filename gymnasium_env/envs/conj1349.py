@@ -15,7 +15,7 @@ class Actions(Enum):
     connect = 1
 
 
-class GridWorldEnv(gym.Env):
+class conj1349env(gym.Env):
     metadata = {"render_modes": ["human", "rgb_array"], "render_fps": 4}
 
     def __init__(self, render_mode=None, nodes=N):
